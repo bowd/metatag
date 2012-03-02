@@ -5,7 +5,12 @@ package edu.man.datamining;
  */
 public class App {
     public static void main( String[] args ) {
-        MetaTag mm = new MetaTag("hello", 12);
-        System.out.println( "Hello World!" );
+        MetaTag mm = new MetaTag("localhost", 8066);
+        try {
+          System.out.println( mm.getSemTypes("penicillin", true, -600) );
+        } catch (Exception e) {
+          System.err.println( "Exception while getting semtypes for phrase." );
+          System.err.println( e.getMessage() );
+        }
     }
 }
